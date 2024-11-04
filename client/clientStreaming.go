@@ -11,7 +11,7 @@ func callSayHelloClientStream(client pb.GreetServiceClient, names *pb.NamesList)
   log.Printf("CLient streaming started")
   ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
-  stream, err := client.SayHelloClientStreaming(ctx, )
+  stream, err := client.SayHelloClientStreaming(ctx)
   if err != nil {
 	log.Fatalf("Could not send name: %v", err)
   }
